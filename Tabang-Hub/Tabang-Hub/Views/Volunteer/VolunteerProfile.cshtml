@@ -85,7 +85,7 @@
                     <div id="skillsDisplay">
                         @foreach (var UserSkill in Model.volunteersSkills)
                         {
-                            <span class="badge badge-secondary skill-badge" data-skill-id="@UserSkill.skillId">
+                            <span style="background-color: mediumseagreen; cursor: pointer" class="badge badge-secondary skill-badge" data-skill-id="@UserSkill.skillId">
                                 @UserSkill.skillName
                                 <span class="remove-skill d-none" onclick="removeSkill(this)">x</span>
                             </span>
@@ -106,28 +106,27 @@
             </div>
         </div>
     </div>
-    @*<div class="card mt-3">
-        <div class="card-body">
-            <h5>Volunteer Impact</h5>
-            <ul>
-                <li>
-                    Total hours volunteered
-                </li>
-                <li>
-                    Number of events participated
-                </li>
-            </ul>
-        </div>
+    <div class="card mt-3">
+            <div class="card-body">
+                <h5>Volunteer Impact</h5>
+                <ul>
+                    <li>
+                        Total hours volunteered
+                    </li>
+                    <li>
+                        Number of events participated
+                    </li>
+                </ul>
+            </div>
     </div>
 
-    <div class="card mt-3">
-    <div class="card-body">
-        <h5>Feedback and Ratings</h5>
-        <p>Feedback from the past events</p>
-    </div>*@
-</div>
+        @*<div class="card mt-3">
+        <div class="card-body">
+            <h5>Feedback and Ratings</h5>
+            <p>Feedback from the past events</p>
+        </div>*@
 </div>
 <br />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="~/Content/Js/profile.js"></script>
+<script src="~/Content/Js2/profile.js"></script>

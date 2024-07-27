@@ -97,6 +97,16 @@ namespace Tabang_Hub.Repository
                 errMsg = "Email Already Exist";
                 return ErrorCode.Error;
             }
+            if (ov.idPicture1 == null)
+            {
+                errMsg = "Please provide Id picture";
+                return ErrorCode.Error;
+            }
+            if (ov.idPicture2 == null)
+            {
+                errMsg = "Please provide Id picture";
+                return ErrorCode.Error;
+            }
 
             if (_userAcc.Create(u, out errMsg) != ErrorCode.Success)
             {
@@ -124,12 +134,15 @@ namespace Tabang_Hub.Repository
         {
             // First, retrieve the user account by its ID
             var user = _userAcc.Get(userId);
+            var uInfo = _volunteerInfo.GetAll().Where(m => m.userId == userId).FirstOrDefault();
 
-            if (user != null)
+            if (user != null && uInfo != null)
             {
                 // Update the status field
                 user.status = newStatus;
-
+                uInfo.fName = " ";
+                uInfo.lName = " ";
+                _volunteerInfo.Update(userId, uInfo, out errMsg);
                 // Now, call the Update method to save the changes
                 return (ErrorCode)_userAcc.Update(userId, user, out errMsg);
             }

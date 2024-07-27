@@ -29,6 +29,7 @@ namespace Tabang_Hub.Controllers
         public BaseRepository<OrgEventImage> _eventImages;
         public BaseRepository<Volunteers> _volunteers;
         public BaseRepository<OrgSkillRequirement> _skillRequirement;
+        public BaseRepository<UserDonated> _userDonated;
 
         //View
         public BaseRepository<vw_ListOfEvent> _listsOfEvent;
@@ -36,13 +37,13 @@ namespace Tabang_Hub.Controllers
         //Stored procedure
         public BaseRepository<sp_OtherEvent_Result> _orgOtherEvent;
 
-        public String Email { get { return User.Identity.Name;  } }
+        public String Email { get { return User.Identity.Name; } }
         public int UserId { get { return _userManager.GetUserByEmail(Email).userId; } }
         public String UserEmail { get { return _userManager.GetUserByEmail(Email).email; } }
         public BaseController()
         {
             db = new TabangHubEntities();
-           _userManager = new UserManager();
+            _userManager = new UserManager();
             _organizationManager = new OrganizationManager();
             _volunteerManager = new VolunteerManager();
             _adminManager = new AdminManager();
@@ -61,6 +62,7 @@ namespace Tabang_Hub.Controllers
             _eventImages = new BaseRepository<OrgEventImage>();
             _volunteers = new BaseRepository<Volunteers>();
             _skillRequirement = new BaseRepository<OrgSkillRequirement>();
+            _userDonated = new BaseRepository<UserDonated>();
 
             _listsOfEvent = new BaseRepository<vw_ListOfEvent>();
 

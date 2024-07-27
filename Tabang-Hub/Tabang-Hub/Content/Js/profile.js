@@ -60,16 +60,6 @@ function toggleInputs(isEditing) {
 
     document.getElementById('editButton').innerText = isEditing ? 'Save' : 'Edit';
     document.getElementById('cancelButton').classList.toggle('d-none', !isEditing);
-
-    if (isEditing) {
-        var availability = document.querySelector('input[name="availability"]:checked').value;
-        var availabilityRadios = document.getElementsByName('availability');
-        for (var i = 0; i < availabilityRadios.length; i++) {
-            if (availabilityRadios[i].value === availability) {
-                availabilityRadios[i].checked = true;
-            }
-        }
-    }
 }
 
 function toggleEdit() {
